@@ -20,7 +20,7 @@ defmodule Inflator.Mixfile do
   def application do
     [
       mod: {Inflator.Application, []},
-      extra_applications: [:logger, :runtime_tools, :timex]
+      extra_applications: [:logger, :runtime_tools, :timex, :download],
     ]
   end
 
@@ -42,7 +42,9 @@ defmodule Inflator.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:mock, "~> 0.2.0", only: :test},
-      {:timex, "~> 3.1"}
+      {:timex, "~> 3.1"},
+      {:download, "~> 0.0.4"},
+      {:nimble_csv, "~> 0.2.0"}
     ]
   end
 

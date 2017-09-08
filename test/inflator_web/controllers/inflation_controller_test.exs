@@ -5,8 +5,8 @@ defmodule InflatorWeb.InflationControllerTest do
   alias Inflator.Price.Inflation
   import Mock
 
-  @create_attrs %{borough: "some borough", date: "2010-04", index: 120.5}
-  @update_attrs %{borough: "some updated borough", date: "2011-05", index: 456.7}
+  @create_attrs %{borough: "some borough", date: "01/04/2010", index: 120.5}
+  @update_attrs %{borough: "some updated borough", date: "01/05/2011", index: 456.7}
   @invalid_attrs %{borough: nil, date: nil, index: nil}
   @mock_inflated_price 500_123.345
   def fixture(:inflation) do

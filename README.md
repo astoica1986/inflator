@@ -1,6 +1,12 @@
 # Inflator
 
-Estimates UK house price changes for a given period 
+Estimates UK house price changes for a given period
+
+## Seed DB from the UK index csv file
+  I've setup 2 tasks to help with seeding the DB from the csv file
+  * Import from local csv file : mix inflator.import_csv "/path/to/filename"
+  * Download csv file from url : mix inflator.download_csv "https/url/path" i.e
+  mix inflator.download_csv 'http://publicdata.landregistry.gov.uk/market-trend-data/house-price-index-data/UK-HPI-full-file-2016-05.csv'
 
 To start your Phoenix server:
 

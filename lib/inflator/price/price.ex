@@ -18,7 +18,7 @@ defmodule Inflator.Price do
   ## Examples
       Assuming we return the following indexes for to and from dates: 103.60 , 28.25
       the inflated price will be £100,000 * (103.60 / 28.25) = £366,726
-      iex> get_inflated_price("2016.01.01", "2000.01.01", 100,000, "Islington")
+      iex> get_inflated_price("01.01.2016", "01.01.2000", 100,000, "Islington")
       366,726
   """
   def get_inflated_price(to, from, price, borough) do
@@ -29,7 +29,7 @@ defmodule Inflator.Price do
       inflated_price = float_price * (to_index / from_index)
       {:ok, inflated_price}
     rescue
-      e in ArithmeticError -> {:error, "Could not find indexes for given values"}
+      _e in ArithmeticError -> {:error, "Could not find indexes for given values"}
     end
   end
 

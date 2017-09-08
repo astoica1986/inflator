@@ -3,10 +3,10 @@ defmodule Inflator.PriceTest do
   use Inflator.DataCase
   alias Inflator.Price
 
-  @from_attrs %{borough: "some borough", date: "2010-04", index: 120.5}
-  @to_attrs %{borough: "some borough", date: "2011-05", index: 456.7}
-  @valid_search_params %{borough: "some borough", to: "2011-05", from: "2010-04", price: 500}
-  @invalid_search_params %{borough: "none existing borough", to: "2011-05", from: "2010-04"}
+  @from_attrs %{borough: "some borough", date: "01/04/2010", index: 120.5}
+  @to_attrs %{borough: "some borough", date: "01/05/2011", index: 456.7}
+  @valid_search_params %{borough: "some borough", to: "01/05/2011", from: "01/04/2010", price: "500"}
+  @invalid_search_params %{borough: "none existing borough", to: "01/05/2011", from: "01/04/2010"}
   @invalid_attrs %{}
 
   def from_inflation_fixture(attrs \\ %{}) do
@@ -46,7 +46,7 @@ defmodule Inflator.PriceTest do
     test "create_inflation/1 with valid data creates a inflation" do
       assert {:ok, %Inflation{} = inflation} = Price.create_inflation(@from_attrs)
       assert inflation.borough == "some borough"
-      assert inflation.date == "2010-04"
+      assert inflation.date == "01/04/2010"
       assert inflation.index == 120.5
     end
 
