@@ -1,11 +1,15 @@
 defmodule Mix.Tasks.Inflator.ImportCsv do
   use Mix.Task
-
-  def run(nil) do
-    IO.puts "Hello World!"
-  end
-
+  alias Inflator.CVSImporter
+  @default_file_name "a.csv"
+  
   def run(file) do
-    IO.puts "Redeaing file #{file}"
+    if File.regular?(file) && Path.extname(file) == ".csv" do
+      IO.puts  "#{file} exists on local and is a csv"
+      CVSImporter.call(file)
+    else
+      IO.puts "File doesn't exist or is not a csv"
+      IO.puts "Trying to download file"
+    end
   end
 end
