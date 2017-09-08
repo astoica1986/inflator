@@ -1,6 +1,7 @@
 defmodule Mix.Tasks.Inflator.ImportCsv do
   use Mix.Task
   alias Inflator.CVSImporter
+  @shortdoc "Usage example: mix inflator.import_csv ~/inflator/temp/index_csv_seed.csv"
 
   def run(file) do
     if is_valid_file?(file) do

@@ -1,7 +1,8 @@
 defmodule Mix.Tasks.Inflator.DownloadCsv do
   use Mix.Task
   @default_path "#{File.cwd!}/temp/index_csv_seed.csv"
-
+  @shortdoc  "Usage example:
+   mix inflator.download_csv 'http://publicdata.landregistry.gov.uk/market-trend-data/house-price-index-data/UK-HPI-full-file-2016-05.csv'"
   def run(url) do
     IO.puts "Attempting to download from #{url} to #{@default_path}"
     Mix.Task.run "app.start"
