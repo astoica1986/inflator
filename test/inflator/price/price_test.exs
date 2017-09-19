@@ -1,4 +1,3 @@
-#require IEx
 defmodule Inflator.PriceTest do
   use Inflator.DataCase
   alias Inflator.Price
@@ -39,8 +38,7 @@ defmodule Inflator.PriceTest do
         @valid_search_params.price,
         @valid_search_params.borough
       )
-    #  IEx.pry
-    #  assert %{:ok, _price} == inflated_price
+      assert {:ok, 1895.0207468879667} == inflated_price
     end
 
     test "create_inflation/1 with valid data creates a inflation" do
